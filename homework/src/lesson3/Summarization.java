@@ -8,23 +8,36 @@ import java.util.Scanner;
 public class Summarization {
     public static void main(String[] args) {
         Scanner scX = new Scanner(System.in);
-        System.out.print("Input val1 : ");
-        if (scX.hasNextInt()) {
-            int x = scX.nextInt();
-            System.out.print("Input val2 : ");
-            if (scX.hasNextInt()) {
-                int y = scX.nextInt();
-                System.out.println("val1 + val2 = " + sum(x, y));
-            } else {
-                System.out.println(" System Error! ");
+        boolean cycle = true;
+        int[] x = new int[2];
+        for (int i = 1; i < 3; i++) {
+            x[i - 1] = inputVal(scX, i);
+            if (x[i - 1] == -2147483648) {
+                cycle = false;
+                break;
             }
+        }
+        if (cycle == true) {
+            System.out.println("Val1 + Val2 = " + sum(x));
         } else {
-            System.out.println(" System Error! ");
+            System.out.println("Sorry(");
         }
     }
 
-    public static int sum(int x, int y) {
-        return x + y;
+    public static int inputVal(Scanner scX, int i) {
+        System.out.print("Input val" + i + " : ");
+        int x;
+        if (scX.hasNextInt()) {
+            x = scX.nextInt();
+        } else {
+            System.out.println("Error!!! Don't believe in obtained results!");
+            x = -2147483648;
+        }
+        return x;
+    }
+
+    public static int sum(int[] x) {
+        return x[0] + x[1];
     }
 }
 

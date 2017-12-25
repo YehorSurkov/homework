@@ -52,10 +52,9 @@ public class ChristmasGarland {
     }
 
     public static void blinker(int i, int n) {
-        int j = i;
         for (int cntr = n; cntr > 0; cntr--) {
-            j = ~j;
-            showGarland(j);
+            i = ~i;
+            showGarland(i);
         }
     }
 
