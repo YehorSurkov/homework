@@ -9,35 +9,37 @@ import java.util.Scanner;
 public class TheLowest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Input an integer number ");
-        int i, j, k;
-        if (sc.hasNextInt()) {
-            i = abs(sc.nextInt());
-            System.out.println(i + " is a number 1\n");
-            System.out.print("Input an integer number");
-            if (sc.hasNextInt()) {
-                j = abs(sc.nextInt());
-                System.out.println(j + " is a number 2\n");
-                System.out.print("Input an integer number");
-                if (sc.hasNextInt()) {
-                    k = abs(sc.nextInt());
-                    System.out.println(k + " is a number 3\n");
-                    if ((i < j) && (i < k)) {
-                        System.out.println("The lowest value is " + i);
-                    } else if ((j < i) && (j < k)) {
-                        System.out.println("The lowest value is " + j);
-                    } else {
-                        System.out.println("The lowest value is " + k);
-                    }
-                } else {
-                    System.out.println("Error ");
-                }
-            } else {
-                System.out.println("Error ");
+        int[] val = new int[3];
+        boolean cycle = true;
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Input an integer number ");
+            val[i] = inputVal(sc, i);
+            if (val[i] == -2147483648) {
+                cycle = false;
+                break;
             }
-        } else {
-            System.out.println("Error ");
         }
+        if (cycle != false) {
+            int theLowest = abs(val[0]);
+            for (int cntr = 1; cntr < val.length; cntr++) {
+                if (theLowest > abs(val[cntr])) {
+                    theLowest = val[cntr];
+                }
+            }
+            System.out.println("The lowest by absolute value is " + theLowest);
+        }
+    }
+
+    public static int inputVal(Scanner sc, int i) {
+        int x;
+        if (sc.hasNextInt()) {
+            x = sc.nextInt();
+            System.out.println(x + " is a number" + (i + 1) + "\n");
+        } else {
+            System.out.println("Error!!!");
+            x = -2147483648;
+        }
+        return x;
     }
 
     public static int abs(int i) {
