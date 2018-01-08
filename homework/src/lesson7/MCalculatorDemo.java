@@ -4,7 +4,6 @@ public class MCalculatorDemo {
     public static void main(String[] args) {
         int[][] arr1 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-
         int alpha1 = 2;
         int[][] arr2 = {{1, 2}, {4, 5}, {7, 8}};
         int[][] arr3 = {{1, 2, 3}, {4, 5, 6}};
@@ -24,6 +23,5 @@ public class MCalculatorDemo {
         matrix.multMatrixRight(arr2);
         matrix.multMatrixRight(arr3);
         matrix.multMatrixRight(arr4);
-
     }
 }
