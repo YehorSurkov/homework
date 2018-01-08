@@ -1,6 +1,6 @@
 package lesson4;
 
-import java.util.Scanner;
+        import java.util.Scanner;
 
 /**
  * Show the lowest by absolute value from three given numbers
@@ -19,7 +19,7 @@ public class TheLowest {
                 break;
             }
         }
-        if (cycle != false) {
+        if (cycle) {
             int theLowest = abs(val[0]);
             for (int cntr = 1; cntr < val.length; cntr++) {
                 if (theLowest > abs(val[cntr])) {
