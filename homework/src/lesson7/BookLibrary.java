@@ -12,12 +12,12 @@ public class BookLibrary {
         } else {
             System.out.println("Error!");
         }
-        BookWarm[] libVisiter = new BookWarm[setCountOfReaders];
+        BookWorm[] libVisiter = new BookWorm[setCountOfReaders];
         for (int i = 0; i < libVisiter.length; i++) {
             libVisiter[i] = readerInput(sc);
         }
 
-        for (BookWarm reader : libVisiter) {
+        for (BookWorm reader : libVisiter) {
             readerOutput(reader);
         }
     }
@@ -26,7 +26,7 @@ public class BookLibrary {
         return sc.next();
     }
 
-    static BookWarm readerInput(Scanner sc) {
+    static BookWorm readerInput(Scanner sc) {
         System.out.println("Name    ");
         String name = strInput(sc);
         System.out.println("Number  ");
@@ -37,10 +37,10 @@ public class BookLibrary {
         String date = strInput(sc);
         System.out.println("Phone   ");
         String phone = strInput(sc);
-        return new BookWarm(name, number, department, date, phone);
+        return new BookWorm(name, number, department, date, phone);
     }
 
-    static void readerOutput(BookWarm reader) {
+    static void readerOutput(BookWorm reader) {
         System.out.println(reader.fullName + " " + reader.ticketNumber + " " + reader.department + " " + reader.dateOfBirth + " " + reader.readerPhone);
     }
 }

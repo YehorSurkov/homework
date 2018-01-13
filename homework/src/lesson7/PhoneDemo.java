@@ -3,12 +3,13 @@ package lesson7;
 public class PhoneDemo {
     public static void main(String[] args) {
         Phone ph1 = new Phone();
+        ph1.setNumber("0667891235");
         Phone ph2 = new Phone("0661414280", "A35");
         Phone ph3 = new Phone("0664958183", "S75", 211.1);
 
-        System.out.println("ph1 can be described by follow parameters:" + ph1.number + " " + ph1.weight + " " + ph1.model);
-        System.out.println("ph2 can be described by follow parameters:" + ph2.number + " " + ph2.weight + " " + ph2.model);
-        System.out.println("ph3 can be described by follow parameters:" + ph3.number + " " + ph3.weight + " " + ph3.model);
+        System.out.println("ph1 can be described by follow parameters:" + ph1.getNumber()+ " " + ph1.getWeight() + " " + ph1.getModel());
+        System.out.println("ph2 can be described by follow parameters:" + ph2.getNumber() + " " + ph2.getWeight() + " " + ph2.getModel());
+        System.out.println("ph3 can be described by follow parameters:" + ph3.getNumber() + " " + ph3.getWeight() + " " + ph3.getModel());
 
         ph1.receiveCall("Sanya");
         ph1.getNumber("0664568391");
@@ -23,5 +24,7 @@ public class PhoneDemo {
         ph3.recieveCall("Sanya", "0664568391");
 
         ph1.sendMessage("939849489", "347983743787438", "87483745847", "3847387487348");
+
+        System.out.println("\nThere are "+Phone.cntr+" phones.");
     }
 }

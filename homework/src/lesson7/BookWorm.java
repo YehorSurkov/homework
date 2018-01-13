@@ -1,6 +1,6 @@
 package lesson7;
 
-public class BookWarm {
+public class BookWorm {
     String fullName;
     String ticketNumber;
     String department;
@@ -40,7 +40,7 @@ public class BookWarm {
         }
     }
 
-    BookWarm(String fN, String tN, String dep, String db, String phone) {
+    BookWorm(String fN, String tN, String dep, String db, String phone) {
         fullName = fN;
         ticketNumber = tN;
         department = dep;

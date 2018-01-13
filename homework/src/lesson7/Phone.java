@@ -1,9 +1,29 @@
 package lesson7;
 
 public class Phone {
-    String number;
-    String model;
-    double weight;
+    static int cntr;
+    private String number;
+    private String model;
+    private double weight;
+
+    Phone(String nmbr, String mdl, double wght) {
+        this(nmbr, mdl);
+        model = mdl;
+        weight = wght;
+    }
+
+    Phone(String nmbr, String mdl) {
+        this();
+        number = nmbr;
+        model = mdl;
+    }
+
+    Phone() {
+        number = "0955449405";
+        model = "M55";
+        weight = 135.5;
+        cntr++;
+    }
 
     void receiveCall(String name) {
         System.out.println(name + " is calling you.");
@@ -25,21 +45,28 @@ public class Phone {
         }
     }
 
-    Phone(String nmbr, String mdl, double wght) {
-        this(nmbr, mdl);
-        model = mdl;
-        weight = wght;
+    public String getModel() {
+        return model;
     }
 
-    Phone(String nmbr, String mdl) {
-        this();
-        number = nmbr;
-        model = mdl;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    Phone() {
-        number = "0955449405";
-        model = "M55";
-        weight = 135.5;
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    String getNumber() {
+        System.out.println(number);
+        return number;
+    }
+
+    void setNumber(String str) {
+        this.number = str;
     }
 }
