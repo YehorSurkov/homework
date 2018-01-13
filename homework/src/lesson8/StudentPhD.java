@@ -1,16 +1,13 @@
 package lesson8;
 
-/**
- * Created by student on 10.01.2018.
- */
 public class StudentPhD extends Student {
+    private String sciWork;
+
     StudentPhD(String fN, String lN, String g, double M) {
         super(fN, lN, g, M);
     }
 
-    private String sciWork;
-
-    public StudentPhD(String fN, String lN, String g, double M, String sci) {
+    StudentPhD(String fN, String lN, String g, double M, String sci) {
         super(fN, lN, g, M);
         sciWork = sci;
     }
@@ -21,5 +18,13 @@ public class StudentPhD extends Student {
 
     public void setSciWork(String sciWork) {
         this.sciWork = sciWork;
+    }
+
+    public int getScholarship() {
+        if (getAverageMark() == 5) {
+            return 200;
+        } else {
+            return 160;
+        }
     }
 }

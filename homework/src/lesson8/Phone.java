@@ -1,6 +1,6 @@
-package lesson7;
+package lesson8;
 
- class Phone {
+public class Phone {
     static int cntr;
     private String number;
     private String model;
@@ -25,17 +25,13 @@ package lesson7;
         cntr++;
     }
 
-    void receiveCall(String name) {
-        System.out.println(name + " is calling you.");
-    }
-
-    void getNumber(String nmbr) {
-        System.out.println(nmbr);
-    }
-
     void recieveCall(String nm, String nmbr) {
         System.out.println(nm + " is calling you.");
         System.out.println(nmbr);
+    }
+
+    void receiveCall(String name) {
+        System.out.println(name + " is calling you.");
     }
 
     void sendMessage(String... arrNumbers) {
@@ -45,19 +41,19 @@ package lesson7;
         }
     }
 
-    public String getModel() {
+    String getModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    void setModel(String model) {
         this.model = model;
     }
 
-    public double getWeight() {
+    double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    void setWeight(double weight) {
         this.weight = weight;
     }
 
@@ -67,6 +63,6 @@ package lesson7;
     }
 
     void setNumber(String str) {
-        this.number = str;
+        number = str;
     }
 }
