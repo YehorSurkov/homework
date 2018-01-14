@@ -1,9 +1,4 @@
-package lesson8;
-
-import lesson8.bouquet.Cartanation;
-import lesson8.bouquet.Flower;
-import lesson8.bouquet.Rose;
-import lesson8.bouquet.Tulip;
+package lesson8.bouquet;
 
 public class BouquetDemo {
     public static void main(String[] args) {
@@ -25,6 +20,9 @@ public class BouquetDemo {
         System.out.println("Bouquet2 costs " + totalCost(bqt2) + " hrvns");
         System.out.println("Bouquet3 costs " + totalCost(bqt3) + " hrvns");
         System.out.println("We have sold " + Flower.getCntr() + " in total.");
+
+        Cactus cactus = new Cactus(true,"Mexico", 214783647,100.99);
+        cactus.isThorn();
 
 
     }
