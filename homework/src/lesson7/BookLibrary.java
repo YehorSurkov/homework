@@ -9,7 +9,8 @@ public class BookLibrary {
         Book book2 = new Book("MacBeth");
         Book book3 = new Book("The Lord of The Rings");
         Book book4 = new Book("The Games of Thrones: the Song of Ice and Fire");
-        Book[] bookNames = {book1, book2, book3, book4};
+        Book[] bookStorage = {book1, book2, book3, book4};
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Set a number of readers\n");
         int setCountOfReaders = 0;
@@ -18,17 +19,13 @@ public class BookLibrary {
         } else {
             System.out.println("Error!");
         }
-        Book[] libStorage = new Book[setCountOfReaders];
-        for (int i = 0; i < libStorage.length; i++) {
-            randomBook = (int) Math.floor(bookNames.length * Math.random());
-            libStorage[i] = bookNames[randomBook];
-        }
+
         BookWorm[] libVisiter = new BookWorm[setCountOfReaders];
         for (int i = 0; i < libVisiter.length; i++) {
             libVisiter[i] = readerInput(sc);
-            randomBook = (int) Math.floor(setCountOfReaders * Math.random());
-            libVisiter[i].takeBook(libStorage[randomBook]);
-            libVisiter[i].returnBook(libStorage[randomBook]);
+            randomBook = (int) Math.floor(4 * Math.random());
+            libVisiter[i].takeBook(bookStorage[randomBook]);
+            libVisiter[i].returnBook(bookStorage[randomBook]);
         }
 
         for (BookWorm reader : libVisiter) {
@@ -52,6 +49,6 @@ public class BookLibrary {
     }
 
     public static void readerOutput(BookWorm reader) {
-        System.out.println(reader.fullName + " " + reader.ticketNumber + " " + reader.department + " " + reader.dateOfBirth + " " + reader.readerPhone);
+        System.out.println(reader.getFullName() + " " + reader.getTicketNumber() + " " + reader.getDepartment() + " " + reader.getDateOfBirth() + " " + reader.getReaderPhone());
     }
 }
