@@ -7,7 +7,7 @@ public class PhoneDemo {
         Phone ph2 = new Phone("0661414280", "A35");
         Phone ph3 = new Phone("0664958183", "S75", 211.1);
 
-        System.out.println("ph1 can be described by follow parameters:" + ph1.getNumber()+ " " + ph1.getWeight() + " " + ph1.getModel());
+        System.out.println("ph1 can be described by follow parameters:" + ph1.getNumber() + " " + ph1.getWeight() + " " + ph1.getModel());
         System.out.println("ph2 can be described by follow parameters:" + ph2.getNumber() + " " + ph2.getWeight() + " " + ph2.getModel());
         System.out.println("ph3 can be described by follow parameters:" + ph3.getNumber() + " " + ph3.getWeight() + " " + ph3.getModel());
 
@@ -25,6 +25,6 @@ public class PhoneDemo {
 
         ph1.sendMessage("939849489", "347983743787438", "87483745847", "3847387487348");
 
-        System.out.println("\nThere are "+Phone.cntr+" phones.");
+        System.out.println("\nThere are " + Phone.cntr + " phones.");
     }
 }

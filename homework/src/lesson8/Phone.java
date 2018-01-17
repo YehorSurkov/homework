@@ -1,7 +1,7 @@
 package lesson8;
 
 public class Phone {
-    static int cntr;
+    public static int cntr;
     private String number;
     private String model;
     private double weight;
@@ -25,44 +25,44 @@ public class Phone {
         cntr++;
     }
 
-    void recieveCall(String nm, String nmbr) {
+    public void recieveCall(String nm, String nmbr) {
         System.out.println(nm + " is calling you.");
         System.out.println(nmbr);
     }
 
-    void receiveCall(String name) {
+    public void receiveCall(String name) {
         System.out.println(name + " is calling you.");
     }
 
-    void sendMessage(String... arrNumbers) {
+    public void sendMessage(String... arrNumbers) {
         System.out.println("This message was sent to");
         for (String nm : arrNumbers) {
             System.out.print(nm + " ; ");
         }
     }
 
-    String getModel() {
+    public String getModel() {
         return model;
     }
 
-    void setModel(String model) {
+    public void setModel(String model) {
         this.model = model;
     }
 
-    double getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    void setWeight(double weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    String getNumber() {
+    public String getNumber() {
         System.out.println(number);
         return number;
     }
 
-    void setNumber(String str) {
+    public void setNumber(String str) {
         number = str;
     }
 }

@@ -1,44 +1,44 @@
 package lesson7;
 
- class Phone {
-    static int cntr;
+public class Phone {
+    public static int cntr;
     private String number;
     private String model;
     private double weight;
 
-    Phone(String nmbr, String mdl, double wght) {
+    public Phone(String nmbr, String mdl, double wght) {
         this(nmbr, mdl);
         model = mdl;
         weight = wght;
     }
 
-    Phone(String nmbr, String mdl) {
+    public Phone(String nmbr, String mdl) {
         this();
         number = nmbr;
         model = mdl;
     }
 
-    Phone() {
+    public Phone() {
         number = "0955449405";
         model = "M55";
         weight = 135.5;
         cntr++;
     }
 
-    void receiveCall(String name) {
+    public void receiveCall(String name) {
         System.out.println(name + " is calling you.");
     }
 
-    void getNumber(String nmbr) {
+    public void getNumber(String nmbr) {
         System.out.println(nmbr);
     }
 
-    void recieveCall(String nm, String nmbr) {
+    public void recieveCall(String nm, String nmbr) {
         System.out.println(nm + " is calling you.");
         System.out.println(nmbr);
     }
 
-    void sendMessage(String... arrNumbers) {
+    public void sendMessage(String... arrNumbers) {
         System.out.println("This message was sent to");
         for (String nm : arrNumbers) {
             System.out.print(nm + " ; ");
@@ -61,12 +61,12 @@ package lesson7;
         this.weight = weight;
     }
 
-    String getNumber() {
+    public String getNumber() {
         System.out.println(number);
         return number;
     }
 
-    void setNumber(String str) {
+    public void setNumber(String str) {
         this.number = str;
     }
 }
