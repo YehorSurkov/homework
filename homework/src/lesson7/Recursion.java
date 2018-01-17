@@ -2,12 +2,12 @@ package lesson7;
 
 public class Recursion {
 
-    int Rec(int A, int B) {
-        if (A == B) {
-            System.out.print(A);
-            return A;
+    int Rec(int a, int b) {
+        if (a == b) {
+            System.out.print(a);
+            return a;
         }
-        System.out.print(A + " ");
-        return Rec(A + (B - A) / Math.abs(A - B), B);
+        System.out.print(a + " ");
+        return Rec(a + (b - a) / Math.abs(a - b), b);
     }
 }
