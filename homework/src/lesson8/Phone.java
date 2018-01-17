@@ -6,19 +6,19 @@ public class Phone {
     private String model;
     private double weight;
 
-    Phone(String nmbr, String mdl, double wght) {
+    public Phone(String nmbr, String mdl, double wght) {
         this(nmbr, mdl);
         model = mdl;
         weight = wght;
     }
 
-    Phone(String nmbr, String mdl) {
+    public Phone(String nmbr, String mdl) {
         this();
         number = nmbr;
         model = mdl;
     }
 
-    Phone() {
+    public Phone() {
         number = "0955449405";
         model = "M55";
         weight = 135.5;
