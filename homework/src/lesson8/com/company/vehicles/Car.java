@@ -62,8 +62,8 @@ public class Car {
         System.out.println(brand);
         System.out.println(autoClass);
         System.out.println(weight);
-        System.out.println(driver);
-        System.out.println(engine);
+        System.out.println(driver.getFullName());
+        System.out.println(engine.getManufacturer());
     }
 
 }

@@ -2,19 +2,12 @@ package lesson8;
 
 import lesson8.com.company.professions.Driver;
 
-public class Person extends Driver {
+public class Person {
     private String fullName;
     private int age;
 
-    public Person() {
-        super("Yehor", "Surkov", 0);
-        fullName = getFirstName() + " " + getLastName();
-        age = 23;
-    }
-
-    public Person(String firstName, String lastName, int age, int exp) {
-        super(firstName, lastName, exp);
-        fullName = firstName + " " + lastName;
+    public Person(String fullName, int age) {
+        this.fullName = fullName;
         this.age = age;
     }
 

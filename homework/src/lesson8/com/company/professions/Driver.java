@@ -1,14 +1,17 @@
 package lesson8.com.company.professions;
 
-public class Driver {
+import lesson8.Person;
+
+public class Driver extends Person {
     private String firstName;
     private String lastName;
     private int experience;
 
-    public Driver(String firstName, String lastName, int experience) {
+    public Driver(String firstName, String lastName, int age, int experience) {
+        super(firstName + " " + lastName, age);
+        this.experience = experience;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.experience = experience;
     }
 
     public String getFirstName() {
