@@ -5,7 +5,7 @@ public class Person {
     int age;
 
     void move() {
-        System.out.println(fullName + " speaks smth.");
+        System.out.println(fullName + " is moving somewhere.");
     }
 
     void tell() {
