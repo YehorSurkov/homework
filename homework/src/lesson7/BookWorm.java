@@ -19,7 +19,7 @@ public class BookWorm {
 
     void takeBook(Book... obj) {
         for (Book o : obj) {
-            System.out.print(fullName + "{ " + ticketNumber + " }" + " is a current holder of " + o.nameOfBook);
+            System.out.print(fullName + "{ " + ticketNumber + " }" + " is a current holder of " + o.getNameOfBook());
         }
     }
 
@@ -30,13 +30,13 @@ public class BookWorm {
 
     void returnBook(String... nameOfBooks) {
         for (String nb : nameOfBooks) {
-            System.out.print(nb + " has been returned by " + fullName);
+            System.out.println(nb + " has been returned by " + fullName);
         }
     }
 
     void returnBook(Book... obj) {
         for (Book o : obj) {
-            System.out.print(fullName + "{ " + ticketNumber + " }" + " has returned " + o.nameOfBook);
+            System.out.println(fullName + "{ " + ticketNumber + " }" + " has returned " + o.getNameOfBook());
         }
     }
 
