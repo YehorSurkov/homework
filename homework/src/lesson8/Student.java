@@ -9,7 +9,7 @@ public class Student {
     private String group;
     private double averageMark;
 
-    Student(String fN, String lN, String g, double ave) {
+    public Student(String fN, String lN, String g, double ave) {
         firstName = fN;
         lastName = lN;
         group = g;
