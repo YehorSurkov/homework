@@ -1,13 +1,12 @@
 package lesson9.greengrocery;
 
-import static java.lang.Math.round;
 import static java.lang.Math.random;
 
 public class greenGrocery {
     public static void main(String[] args) {
-        Apple[] applesInPack = {new Apple(round(6.7 * random())), new Apple(round(6.7 * random())), new Apple(round(6.7 * random()))};
-        Pear[] pearsInPack = {new Pear(round(8.1 * random())), new Pear(round(8.1 * random())), new Pear(round(8.1 * random())), new Pear(round(8.1 * random()))};
-        Apricot[] apricotsInPack = {new Apricot(round(3.3 * random())), new Apricot(round(3.3 * random())), new Apricot(round(3.3 * random())), new Apricot(round(3.3 * random()))};
+        Apple[] applesInPack = {new Apple(6.7 * random()), new Apple(6.7 * random()), new Apple(6.7 * random())};
+        Pear[] pearsInPack = {new Pear(8.1 * random()), new Pear(8.1 * random()), new Pear(8.1 * random()), new Pear(8.1 * random())};
+        Apricot[] apricotsInPack = {new Apricot(3.3 * random()), new Apricot(3.3 * random()), new Apricot(3.3 * random()), new Apricot(3.3 * random())};
         Fruit[][] fruitsInPack = {applesInPack, pearsInPack, apricotsInPack};
 
         double totalCost = 0;
