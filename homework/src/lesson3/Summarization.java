@@ -17,7 +17,7 @@ public class Summarization {
                 break;
             }
         }
-        if (cycle == true) {
+        if (cycle) {
             System.out.println("Val1 + Val2 = " + sum(x));
         } else {
             System.out.println("Sorry(");
