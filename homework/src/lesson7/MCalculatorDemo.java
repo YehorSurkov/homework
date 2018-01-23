@@ -10,14 +10,14 @@ public class MCalculatorDemo {
         MCalculator arr3 = new MCalculator(new double[][]{{1, 2, 3}, {4, 5, 6}});
         MCalculator arr4 = new MCalculator(new double[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}});
 
-        System.out.println("My matrix consists " + arr1.rawCount + "raws\n");
+        System.out.println("My matrix consists " + arr1.getRawCount() + "raws\n");
 
-        MCalculator.showResult(arr1);
-        MCalculator.showResult(arr1.addMatrixes(arr4));
-        MCalculator.showResult(arr1.addMatrixes(arr2));
-        MCalculator.showResult(arr1.multToNumber(alpha1));
-        MCalculator.showResult(arr1.multMatrixRight(arr2));
-        MCalculator.showResult(arr1.multMatrixRight(arr3));
-        MCalculator.showResult(arr1.multMatrixRight(arr4));
+        arr1.showResult(arr1);
+        arr1.showResult(arr1.addMatrixes(arr4));
+        arr1.showResult(arr1.addMatrixes(arr2));
+        arr1.showResult(arr1.multToNumber(alpha1));
+        arr1.showResult(arr1.multMatrixRight(arr2));
+        arr1.showResult(arr1.multMatrixRight(arr3));
+        arr1.showResult(arr1.multMatrixRight(arr4));
     }
 }
