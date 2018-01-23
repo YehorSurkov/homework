@@ -60,17 +60,15 @@ public class MCalculator {
 
     public MCalculator multMatrixRight(MCalculator m) {
         if (callCount == m.matrix.length) {
-            double ij;
+            MCalculator r = new MCalculator(new double[rawCount][m.matrix[0].length]);
             for (int i = 0; i < rawCount; i++) {
                 for (int j = 0; j < m.matrix[0].length; j++) {
-                    ij = 0;
-                    for (int cntr = 0; cntr < callCount; cntr++) {
-                        ij += matrix[i][cntr] * m.matrix[cntr][j];
-                    }
-                    matrix[i][j] = ij;
+                    r.matrix[i][j] = 0;
+                    for (int cntr = 0; cntr < callCount; cntr++)
+                        r.matrix[i][j] += matrix[i][cntr] * m.matrix[cntr][j];
                 }
             }
-            return this;
+            return r;
         } else {
             System.out.println("Wrong size");
             return new MCalculator(new double[1][1]);
