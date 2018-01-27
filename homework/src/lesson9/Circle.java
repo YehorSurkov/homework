@@ -3,7 +3,7 @@ package lesson9;
 import java.util.Objects;
 
 public class Circle {
-    final double pi = Math.PI;
+    final private static double pi = Math.PI;
     private double radius;
 
     public Circle(double radius) {
@@ -31,8 +31,8 @@ public class Circle {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Circle circle = (Circle) o;
-        return Double.compare(circle.pi, pi) == 0 &&
-                Double.compare(circle.radius, radius) == 0;
+        return Double.compare(pi, pi) == 0 &&
+                Double.compare(radius, radius) == 0;
     }
 
     @Override

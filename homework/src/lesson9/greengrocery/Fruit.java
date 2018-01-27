@@ -48,7 +48,7 @@ public abstract class Fruit {
                 '}';
     }
 
-    final void printManufacturer() {
+    final public void printManufacturer() {
         System.out.println("Made in Ukraine");
     }
 

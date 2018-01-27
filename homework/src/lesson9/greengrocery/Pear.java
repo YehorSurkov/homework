@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Pear extends Fruit {
     static public int pearCount = 0;
-    private double costPerUnitWeight;
+    private static double costPerUnitWeight;
 
     public Pear(double weight) {
         super(weight);
-        this.costPerUnitWeight = 15.2;
+        costPerUnitWeight = 15.2;
         pearCount++;
     }
 

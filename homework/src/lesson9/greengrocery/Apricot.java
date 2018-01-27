@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Apricot extends Fruit {
     static public int apricotCount = 0;
-    private double costPerUnitWeight;
+    private static double costPerUnitWeight;
 
     public Apricot(double weight) {
         super(weight);
-        this.costPerUnitWeight = 30.5;
+        costPerUnitWeight = 30.5;
         apricotCount++;
     }
 
@@ -26,7 +26,7 @@ public class Apricot extends Fruit {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Apricot apricot = (Apricot) o;
-        return Double.compare(apricot.costPerUnitWeight, costPerUnitWeight) == 0;
+        return Double.compare(costPerUnitWeight, costPerUnitWeight) == 0;
     }
 
     @Override

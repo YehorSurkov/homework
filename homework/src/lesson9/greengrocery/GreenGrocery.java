@@ -2,7 +2,7 @@ package lesson9.greengrocery;
 
 import static java.lang.Math.random;
 
-public class greenGrocery {
+public class GreenGrocery {
     public static void main(String[] args) {
         Apple[] applesInPack = {new Apple(6.7 * random()), new Apple(6.7 * random()), new Apple(6.7 * random())};
         Pear[] pearsInPack = {new Pear(8.1 * random()), new Pear(8.1 * random()), new Pear(8.1 * random()), new Pear(8.1 * random())};
