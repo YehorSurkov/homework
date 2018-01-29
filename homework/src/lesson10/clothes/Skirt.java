@@ -5,7 +5,7 @@ package lesson10.clothes;
  */
 public class Skirt extends Clothes implements WomanClothes {
 
-    public Skirt(int size, double cost, String color) {
+    public Skirt(Sizes size, double cost, String color) {
         super(size, cost, color);
     }
 
@@ -15,12 +15,12 @@ public class Skirt extends Clothes implements WomanClothes {
     }
 
     @Override
-    public int getSize() {
+    public Sizes getSize() {
         return super.getSize();
     }
 
     @Override
-    public void setSize(int size) {
+    public void setSize(Sizes size) {
         super.setSize(size);
     }
 

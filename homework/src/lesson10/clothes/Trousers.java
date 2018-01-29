@@ -4,7 +4,7 @@ package lesson10.clothes;
  * Created by Student on 24.01.2018.
  */
 public class Trousers extends Clothes implements ManClothes, WomanClothes {
-    public Trousers(int size, double cost, String color) {
+    public Trousers(Sizes size, double cost, String color) {
         super(size, cost, color);
     }
 
@@ -19,12 +19,12 @@ public class Trousers extends Clothes implements ManClothes, WomanClothes {
     }
 
     @Override
-    public int getSize() {
+    public Sizes getSize() {
         return super.getSize();
     }
 
     @Override
-    public void setSize(int size) {
+    public void setSize(Sizes size) {
         super.setSize(size);
     }
 

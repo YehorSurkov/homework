@@ -4,17 +4,17 @@ package lesson10.clothes;
  * Created by Student on 24.01.2018.
  */
 public class Tie extends Clothes implements ManClothes {
-    public Tie(int size, double cost, String color) {
+    public Tie(Sizes size, double cost, String color) {
         super(size, cost, color);
     }
 
     @Override
-    public int getSize() {
+    public Sizes getSize() {
         return super.getSize();
     }
 
     @Override
-    public void setSize(int size) {
+    public void setSize(Sizes size) {
         super.setSize(size);
     }
 
@@ -42,4 +42,5 @@ public class Tie extends Clothes implements ManClothes {
     public void dressMan() {
         System.out.println("I'm dressing a tie.");
     }
+
 }

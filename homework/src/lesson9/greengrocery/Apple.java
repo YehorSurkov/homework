@@ -4,20 +4,20 @@ import java.util.Objects;
 
 public class Apple extends Fruit {
     static public int appleCount = 0;
-    static private double costPerUnitOfWeight;
+    static private double COSTPERUNITWEIGHT;
 
     public Apple(double weight) {
         super(weight);
-        costPerUnitOfWeight = 10.5;
+        COSTPERUNITWEIGHT = 10.5;
         appleCount++;
     }
 
     public double getCostPerUnitOfWeight() {
-        return costPerUnitOfWeight;
+        return COSTPERUNITWEIGHT;
     }
 
     public void setCostPerUnitOfWeight(double costPerUnitOfWeight) {
-        this.costPerUnitOfWeight = costPerUnitOfWeight;
+        this.COSTPERUNITWEIGHT = costPerUnitOfWeight;
     }
 
     @Override
@@ -26,24 +26,24 @@ public class Apple extends Fruit {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Apple apple = (Apple) o;
-        return Double.compare(costPerUnitOfWeight, costPerUnitOfWeight) == 0;
+        return Double.compare(COSTPERUNITWEIGHT, COSTPERUNITWEIGHT) == 0;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), costPerUnitOfWeight);
+        return Objects.hash(super.hashCode(), COSTPERUNITWEIGHT);
     }
 
     @Override
     public String toString() {
         return "Apple{" +
-                "costPerUnitOfWeight=" + costPerUnitOfWeight +
+                "costPerUnitOfWeight=" + COSTPERUNITWEIGHT +
                 '}';
     }
 
     @Override
     public double cost() {
-        return getWeight() * costPerUnitOfWeight;
+        return getWeight() * COSTPERUNITWEIGHT;
     }
 }

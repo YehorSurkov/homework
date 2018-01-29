@@ -1,22 +1,22 @@
 package lesson7;
 
 public class MCalculator {
-    private int callCount;
+    private int colCount;
     private int rawCount;
     private double[][] matrix;
 
     public MCalculator(double[][] mat) {
         rawCount = mat.length;
-        callCount = mat[0].length;
+        colCount = mat[0].length;
         matrix = mat;
     }
 
     public int getCallCount() {
-        return callCount;
+        return colCount;
     }
 
     public void setCallCount(int callCount) {
-        this.callCount = callCount;
+        this.colCount = callCount;
     }
 
     public int getRawCount() {
@@ -36,13 +36,14 @@ public class MCalculator {
     }
 
     public MCalculator addMatrixes(MCalculator m) {
-        if ((rawCount == m.matrix.length) && (callCount == m.matrix[0].length)) {
+        MCalculator r = new MCalculator(new double[rawCount][colCount]);
+        if ((rawCount == m.matrix.length) && (colCount == m.matrix[0].length)) {
             for (int i = 0; i < rawCount; i++) {
                 for (int j = 0; j < matrix[i].length; j++) {
-                    matrix[i][j] += m.matrix[i][j];
+                    r.matrix[i][j] = matrix[i][j] + m.matrix[i][j];
                 }
             }
-            return this;
+            return r;
         } else {
             System.out.println("Wrong size");
             return new MCalculator(new double[1][1]);
@@ -50,21 +51,22 @@ public class MCalculator {
     }
 
     public MCalculator multToNumber(double alpha) {
+        MCalculator r = new MCalculator(new double[rawCount][colCount]);
         for (int i = 0; i < rawCount; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] *= alpha;
+                r.matrix[i][j] = matrix[i][j] * alpha;
             }
         }
-        return this;
+        return r;
     }
 
     public MCalculator multMatrixRight(MCalculator m) {
-        if (callCount == m.matrix.length) {
+        if (colCount == m.matrix.length) {
             MCalculator r = new MCalculator(new double[rawCount][m.matrix[0].length]);
             for (int i = 0; i < rawCount; i++) {
                 for (int j = 0; j < m.matrix[0].length; j++) {
                     r.matrix[i][j] = 0;
-                    for (int cntr = 0; cntr < callCount; cntr++)
+                    for (int cntr = 0; cntr < colCount; cntr++)
                         r.matrix[i][j] += matrix[i][cntr] * m.matrix[cntr][j];
                 }
             }
@@ -75,8 +77,8 @@ public class MCalculator {
         }
     }
 
-    public void showResult(MCalculator m) {
-        for (double[] raw : m.matrix) {
+    public void showResult() {
+        for (double[] raw : matrix) {
             for (double el : raw) {
                 System.out.print(el + " ");
             }
