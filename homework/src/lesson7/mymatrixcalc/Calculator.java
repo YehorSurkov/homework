@@ -89,7 +89,7 @@ public class Calculator {
             } else {
                 double det = 0;
                 for (int i = 0; i < m.rowCount; i++) {
-                    det += Math.pow(-1, i + 1 + 1) * m.matrix[0][i] * determinant(calcMinor(m, m.rowCount - 1));
+                    det += Math.pow(-1, i + 1 + 1) * m.matrix[0][i] * determinant(calcMinor(m, i));
                 }
                 return det;
             }
@@ -106,7 +106,7 @@ public class Calculator {
             for (int j = 0; j < m.colCount - 1; j++) {
                 if (j == col) {
                     dj = 1;
-                } else {
+                }else {
                     minor.matrix[i - 1][j - dj] = m.matrix[i][j];
                 }
             }

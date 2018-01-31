@@ -16,7 +16,7 @@ public class CalculatorDemo {
 
         calculator.multiplication(arr3, arr2, "I don't need any new obj. I just wanna to see result");
 
-        System.out.println(calculator.determinant(arr1));
+        System.out.println(calculator.determinant(arr4));
         System.out.println(calculator.determinant(arr2));
 
     }
