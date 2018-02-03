@@ -3,21 +3,17 @@ package lesson9.greengrocery;
 import java.util.Objects;
 
 public class Apricot extends Fruit {
-    static public int apricotCount = 0;
-    private static double COSTPERUNITWEIGHT;
+    public static int apricotCount = 0;
+    private final double COST_PER_UNIT_WEIGHT;
 
     public Apricot(double weight) {
         super(weight);
-        COSTPERUNITWEIGHT = 30.5;
+        COST_PER_UNIT_WEIGHT = 30.5;
         apricotCount++;
     }
 
     public double getCostPerUnitWeight() {
-        return COSTPERUNITWEIGHT;
-    }
-
-    public void setCostPerUnitWeight(double costPerUnitWeight) {
-        this.COSTPERUNITWEIGHT = costPerUnitWeight;
+        return COST_PER_UNIT_WEIGHT;
     }
 
     @Override
@@ -26,24 +22,24 @@ public class Apricot extends Fruit {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Apricot apricot = (Apricot) o;
-        return Double.compare(COSTPERUNITWEIGHT, COSTPERUNITWEIGHT) == 0;
+        return Double.compare(COST_PER_UNIT_WEIGHT, COST_PER_UNIT_WEIGHT) == 0;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), COSTPERUNITWEIGHT);
+        return Objects.hash(super.hashCode(), COST_PER_UNIT_WEIGHT);
     }
 
     @Override
     public String toString() {
         return "Apricot{" +
-                "costPerUnitWeight=" + COSTPERUNITWEIGHT +
+                "costPerUnitWeight=" + COST_PER_UNIT_WEIGHT +
                 '}';
     }
 
     @Override
     public double cost() {
-        return getWeight() * COSTPERUNITWEIGHT;
+        return getWeight() * COST_PER_UNIT_WEIGHT;
     }
 }

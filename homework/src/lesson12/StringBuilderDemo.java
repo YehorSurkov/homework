@@ -6,20 +6,20 @@ public class StringBuilderDemo {
         int i2 = 56;
 
         StringBuilder[] sB = {new StringBuilder(), new StringBuilder(), new StringBuilder()};
-        sB[0].append(i1 + "+" + i2 + "=" + (i1 + i2));
-        sB[1].append(i1 + "-" + i2 + "=" + (i1 - i2));
-        sB[2].append(i1 + "*" + i2 + "=" + i1 * i2);
+        sB[0].append(i1).append("+").append(i2).append("=").append(i1 + i2);
+        sB[1].append(i1).append("-").append(i2).append("=").append(i1 - i2);
+        sB[2].append(i1).append("*").append(i2).append("=").append(i1 * i2);
         for (StringBuilder str : sB) {
             System.out.println(str);
         }
 
         StringBuilder[] sB1 = {new StringBuilder(), new StringBuilder(), new StringBuilder()};
-        sB1[0].append(i1 + "+" + i2 + "=" + (i1 + i2));
-        sB1[1].append(i1 + "-" + i2 + "=" + (i1 - i2));
-        sB1[2].append(i1 + "*" + i2 + "=" + i1 * i2);
+        sB1[0].append(i1).append("+").append(i2).append("=").append(i1 + i2);
+        sB1[1].append(i1).append("-").append(i2).append("=").append(i1 - i2);
+        sB1[2].append(i1).append("*").append(i2).append("=").append(i1 * i2);
         StringBuilder[] sB2 = {new StringBuilder(), new StringBuilder(), new StringBuilder()};
-        sB2[0].append(i1 + "+" + i2 + "=" + (i1 + i2));
-        sB2[1].append(i1 + "-" + i2 + "=" + (i1 - i2));
+        sB2[0].append(i1).append("+").append(i2).append("=").append(i1 + i2);
+        sB2[1].append(i1).append("-").append(i2).append("=").append(i1 - i2);
         sB2[2].append(i1 + "*" + i2 + "=" + i1 * i2);
         for (int i = 0; i < sB.length; i++) {
             System.out.println(replacer1(sB1[i]));
