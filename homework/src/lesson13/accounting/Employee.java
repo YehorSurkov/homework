@@ -1,17 +1,23 @@
-package lesson12.Accounting;
+package lesson13.accounting;
 
+import java.text.NumberFormat;
+import java.util.Date;
 import java.util.Formatter;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Employee {
     private String fullName;
     private String position;
     private double salary;
+    private Date salaryDate;
 
-    public Employee(String fullName, String position, double salary) {
+    public Employee(String fullName, String position, double salary, Date sD) {
         this.fullName = fullName;
         this.position = position;
         this.salary = salary;
+        salaryDate = sD;
+
     }
 
     public String getFullName() {
@@ -38,6 +44,14 @@ public class Employee {
         this.salary = salary;
     }
 
+    public Date getSalaryDate() {
+        return salaryDate;
+    }
+
+    public void setSalaryDate(Date salaryDate) {
+        this.salaryDate = salaryDate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -57,6 +71,7 @@ public class Employee {
     @Override
     public String toString() {
         Formatter f = new Formatter();
-        return f.format("Employee %s obtains %s position and get %.2f salary", fullName, position, salary).toString();
+        Locale loc = Locale.getDefault();
+        return f.format("Employee %s obtains %s position and get " + NumberFormat.getInstance(loc).format(salary) + " salary", fullName, position).toString();
     }
 }

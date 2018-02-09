@@ -1,4 +1,4 @@
-package lesson12.Accounting;
+package lesson12.accounting;
 
 public class ReportDemo {
     public static void main(String[] args) {

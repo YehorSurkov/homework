@@ -1,4 +1,4 @@
-package lesson13.Accounting;
+package lesson13.accounting;
 
 public class FullReport {
     public static void generateReport(Employee[] workers) {

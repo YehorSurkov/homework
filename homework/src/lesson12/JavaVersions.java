@@ -17,7 +17,7 @@ public class JavaVersions {
                 String[] s = p.split(ver);
                 String f = "";
                 for (String el : s) {
-                    el.trim();
+                    el = el.trim();
                     if (el.length() > 0) {
                         f += el;
                     }

@@ -1,4 +1,4 @@
-package lesson13.Accounting;
+package lesson13.accounting;
 
 import java.util.Date;
 
