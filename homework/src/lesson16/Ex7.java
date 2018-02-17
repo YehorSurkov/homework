@@ -3,7 +3,7 @@ package lesson16;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class Ex6 {
+public class Ex7 {
     public static void main(String[] args) {
         Queue<Box> boxes = new ArrayDeque<>();
         boxes.offer(new Box(14.4));
@@ -12,10 +12,19 @@ public class Ex6 {
         boxes.offer(new Box(15.7));
         boxes.offer(new Box(19.1));
 
-        for (Box box : boxes) {
-            System.out.println(boxes.poll());
-        }
+        Queue<Box> boxes1 = hhb(boxes);
+        boxes1.forEach(System.out::println);
+    }
 
-        System.out.println(boxes.size());
+    static Queue<Box> hhb(Queue<Box> boxes) {
+        Queue<Box> result = new ArrayDeque<>();
+        for (Box box : boxes) {
+            if (boxes.peek().getWeight() > 4) {
+                result.offer(boxes.poll());
+            }else{
+                boxes.poll();
+            }
+        }
+        return result;
     }
 }
