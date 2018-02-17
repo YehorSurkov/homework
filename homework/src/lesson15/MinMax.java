@@ -15,10 +15,10 @@ public class MinMax<T extends Number> {
         this.arr = arr;
     }
 
-    public double min() {
-        double min = arr[0].doubleValue();
+    public Number min() {
+        Number min = arr[0].doubleValue();
         for (T el : arr) {
-            if (min > el.doubleValue()) {
+            if (min.doubleValue() > el.doubleValue()) {
                 min = el.doubleValue();
             }
         }
