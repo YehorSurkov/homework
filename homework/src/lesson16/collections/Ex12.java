@@ -15,9 +15,14 @@ public class Ex12 {
         Category clothes = new Category("Clothes", arrClothes);
         System.out.println("Sorted by Cost");
         clothes.printSortedByCost();
-        System.out.println("\nSorted by Name");
+        System.out.println();
+        clothes.printSortedByCostInverse();
+        System.out.println("\n\nSorted by Name");
         clothes.printSortedByName();
-        System.out.println("\nSorted by Rank");
+        clothes.printSortedByNameInverse();
+        System.out.println("\n\nSorted by Rank");
         clothes.printSortedByRank();
+        System.out.println();
+        clothes.printSortedByRankInverse();
     }
 }

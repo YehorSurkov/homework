@@ -40,7 +40,7 @@ public class Dog extends Pet {
                 '}';
     }
 
-    public void speek() {
+    public void speak() {
         System.out.println("Bow-Wow!");
     }
 }

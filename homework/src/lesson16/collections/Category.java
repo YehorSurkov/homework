@@ -65,4 +65,22 @@ public class Category {
         setOfProducts.sort(new ComparatorRank());
         setOfProducts.forEach(System.out::println);
     }
+
+    public void printSortedByNameInverse() {
+        setOfProducts.sort(new ComparatorName());
+        Collections.reverse(setOfProducts);
+        setOfProducts.forEach(System.out::println);
+    }
+
+    public void printSortedByCostInverse() {
+        setOfProducts.sort(new ComparatorCost());
+        Collections.reverse(setOfProducts);
+        setOfProducts.forEach(System.out::println);
+    }
+
+    public void printSortedByRankInverse() {
+        setOfProducts.sort(new ComparatorRank());
+        Collections.reverse(setOfProducts);
+        setOfProducts.forEach(System.out::println);
+    }
 }
