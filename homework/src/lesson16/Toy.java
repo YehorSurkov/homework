@@ -1,16 +1,18 @@
-package lesson16.Comparators;
+package lesson16;
 
 import java.util.Objects;
 
-public class Product {
+public class Toy {
     private String name;
     private double cost;
-    private int rank;
 
-    public Product(String name, double cost, int rank) {
+    public Toy() {
+
+    }
+
+    public Toy(String name, double cost) {
         this.name = name;
         this.cost = cost;
-        this.rank = rank;
     }
 
     public String getName() {
@@ -29,36 +31,26 @@ public class Product {
         this.cost = cost;
     }
 
-    public int getRank() {
-        return rank;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return Double.compare(product.cost, cost) == 0 &&
-                rank == product.rank &&
-                Objects.equals(name, product.name);
+        Toy toy = (Toy) o;
+        return Double.compare(toy.cost, cost) == 0 &&
+                Objects.equals(name, toy.name);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(name, cost, rank);
+        return Objects.hash(name, cost);
     }
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Toy{" +
                 "name='" + name + '\'' +
                 ", cost=" + cost +
-                ", rank=" + rank +
                 '}';
     }
 }

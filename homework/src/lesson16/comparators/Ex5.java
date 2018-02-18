@@ -1,4 +1,4 @@
-package lesson16.Comparators;
+package lesson16.comparators;
 
 import java.util.ArrayList;
 

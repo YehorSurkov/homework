@@ -11,7 +11,7 @@ public class Ex4 {
         System.out.println(remover(str));
     }
 
-    static String remover(String str) {
+    public static String remover(String str) {
         Pattern p = Pattern.compile(",");
         String[] s = p.split(str);
         Set<Integer> set = new TreeSet<>();

@@ -16,12 +16,12 @@ public class Ex7 {
         boxes1.forEach(System.out::println);
     }
 
-    static Queue<Box> hhb(Queue<Box> boxes) {
+    public static Queue<Box> hhb(Queue<Box> boxes) {
         Queue<Box> result = new ArrayDeque<>();
         for (Box box : boxes) {
             if (boxes.peek().getWeight() > 4) {
                 result.offer(boxes.poll());
-            }else{
+            } else {
                 boxes.poll();
             }
         }
