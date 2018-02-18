@@ -1,4 +1,4 @@
-package lesson16.comparators;
+package lesson16.collections;
 
 import java.util.*;
 
@@ -52,23 +52,17 @@ public class Category {
     }
 
     public void printSortedByName() {
-        Comparator<Product> cName = new ComparatorName();
-        Set<Product> set = new TreeSet<>(cName);
-        set.addAll(setOfProducts);
-        set.forEach(System.out::println);
+        setOfProducts.sort(new ComparatorName());
+        setOfProducts.forEach(System.out::println);
     }
 
     public void printSortedByCost() {
-        Comparator<Product> cName = new ComparatorCost();
-        Set<Product> set = new TreeSet<>(cName);
-        set.addAll(setOfProducts);
-        set.forEach(System.out::println);
+        setOfProducts.sort(new ComparatorCost());
+        setOfProducts.forEach(System.out::println);
     }
 
     public void printSortedByRank() {
-        Comparator<Product> cName = new ComparatorRank();
-        Set<Product> set = new TreeSet<>(cName);
-        set.addAll(setOfProducts);
-        set.forEach(System.out::println);
+        setOfProducts.sort(new ComparatorRank());
+        setOfProducts.forEach(System.out::println);
     }
 }
