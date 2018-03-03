@@ -4,10 +4,10 @@ import java.util.*;
 
 public class Category {
     private String name;
-    private ArrayList<Product> setOfProducts;
+    private List<Product> setOfProducts;
 
 
-    public Category(String name, ArrayList<Product> setOfProducts) {
+    public Category(String name, List<Product> setOfProducts) {
         this.name = name;
         this.setOfProducts = setOfProducts;
     }
@@ -20,7 +20,7 @@ public class Category {
         this.name = name;
     }
 
-    public ArrayList<Product> getSetOfProducts() {
+    public List<Product> getSetOfProducts() {
         return setOfProducts;
     }
 

@@ -1,10 +1,11 @@
 package lesson16.comparators;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Ex5 {
     public static void main(String[] args) {
-        ArrayList<Product> arrClothes = new ArrayList<>();
+        List<Product> arrClothes = new ArrayList<>();
         arrClothes.add(new Product("skirt", 3.1, 2));
         arrClothes.add(new Product("dress", 23.1, 3));
         arrClothes.add(new Product("chinos", 13.1, 6));
