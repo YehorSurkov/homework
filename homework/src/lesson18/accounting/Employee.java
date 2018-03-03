@@ -1,18 +1,15 @@
 package lesson18.accounting;
 
 import java.text.NumberFormat;
-import java.util.Date;
-import java.util.Formatter;
-import java.util.Locale;
-import java.util.Objects;
+import java.util.*;
 
 public class Employee {
     private String fullName;
     private String position;
     private double salary;
-    private Date salaryDate;
+    private Calendar salaryDate;
 
-    public Employee(String fullName, String position, double salary, Date sD) {
+    public Employee(String fullName, String position, double salary, Calendar sD) {
         this.fullName = fullName;
         this.position = position;
         this.salary = salary;
@@ -44,11 +41,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Date getSalaryDate() {
+    public Calendar getSalaryDate() {
         return salaryDate;
     }
 
-    public void setSalaryDate(Date salaryDate) {
+    public void setSalaryDate(Calendar salaryDate) {
         this.salaryDate = salaryDate;
     }
 
@@ -72,6 +69,6 @@ public class Employee {
     public String toString() {
         Formatter f = new Formatter();
         Locale loc = Locale.getDefault();
-        return f.format("Employee %s obtains %s position and get " + NumberFormat.getInstance(loc).format(salary) + " salary", fullName, position).toString();
+        return f.format("Employee %s obtains %s position and gets " + NumberFormat.getInstance(loc).format(salary) + " salary", fullName, position).toString();
     }
 }
