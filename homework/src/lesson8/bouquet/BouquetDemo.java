@@ -13,7 +13,7 @@ public class BouquetDemo {
         Flower flwr9 = new Cartanation("Orange", "Ukraine", 30, 1.5);
 
         Flower[] bqt1 = {flwr1, flwr3, flwr5};
-        Flower[] bqt2 = {flwr7, flwr9,  flwr6};
+        Flower[] bqt2 = {flwr7, flwr9, flwr6};
         Flower[] bqt3 = {flwr2, flwr4, flwr8};
 
         System.out.println("Bouquet1 costs " + totalCost(bqt1) + " hrvns");
@@ -21,7 +21,7 @@ public class BouquetDemo {
         System.out.println("Bouquet3 costs " + totalCost(bqt3) + " hrvns");
         System.out.println("We have sold " + Flower.getCntr() + " in total.");
 
-        Cactus cactus = new Cactus(true,"Mexico", 214783647,100.99);
+        Cactus cactus = new Cactus(true, "Mexico", 214783647, 100.99);
         cactus.isThorn();
 
 

@@ -16,7 +16,7 @@ public class Cat extends Animal {
         this.lenOfPaws = lenOfPaws;
     }
 
-    public void makeNoise(){
+    public void makeNoise() {
         System.out.println("Meow");
     }
 }

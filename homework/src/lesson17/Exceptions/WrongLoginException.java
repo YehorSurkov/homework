@@ -1,6 +1,6 @@
 package lesson17.Exceptions;
 
-public class WrongLoginException extends Exception{
+public class WrongLoginException extends Exception {
     public WrongLoginException() {
     }
 

@@ -1,6 +1,6 @@
 package lesson4;
 
-        import java.util.Scanner;
+import java.util.Scanner;
 
 /**
  * Show the lowest by absolute value from three given numbers

@@ -2,10 +2,10 @@ package lesson10.editorialoffice;
 
 public class Demo {
     public static void main(String[] args) {
-        Printable[] prnt = {new Book("MacBeth"),new Magazine("Murzilka"), new Book("Hamlet"), new Book("Faust"),
+        Printable[] prnt = {new Book("MacBeth"), new Magazine("Murzilka"), new Book("Hamlet"), new Book("Faust"),
                 new Magazine("Nature")};
 
-        for(Printable p: prnt){
+        for (Printable p : prnt) {
             p.print();
         }
 
