@@ -24,5 +24,6 @@ public class Dinner {
         t3.start();
         t4.start();
         t5.start();
+        System.out.println(t1.getName());
     }
 }
