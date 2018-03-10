@@ -1,28 +1,30 @@
 package lesson20.ex4;
 
-public class MyQueue<T> {
-    private T obj;
+import java.util.Queue;
 
-    public MyQueue(T obj) {
+public class MyQueue<T> {
+    private Queue<T> obj;
+
+    public MyQueue(Queue<T> obj) {
         this.obj = obj;
     }
 
-    public T getObj() {
+    public Queue<T> getObj() {
         return obj;
     }
 
-    public void setObj(T obj) {
+    public void setObj(Queue<T> obj) {
         this.obj = obj;
     }
 
-    public synchronized T get() {
+    public synchronized Queue<T> get() {
         System.out.println("Got " + obj.toString());
         return obj;
     }
 
 
     public synchronized void put(Object obj2) {
-        this.obj = (T) obj2;
+        this.obj = (Queue<T>) obj2;
         System.out.println("Sent " + obj.toString());
     }
 }

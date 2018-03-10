@@ -1,8 +1,10 @@
 package lesson20.ex4;
 
+import java.util.PriorityQueue;
+
 public class ProducerDemo {
     public static void main(String[] args) {
-        MyQueue myQueue = new MyQueue(new Integer(6));
+        MyQueue myQueue = new MyQueue(new PriorityQueue<>(6));
 
         Consumer consumer1 = new Consumer(myQueue);
         Consumer consumer2 = new Consumer(myQueue);
