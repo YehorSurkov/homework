@@ -12,35 +12,34 @@ public class Philosopher extends Thread {
     }
 
     public void takeSpoon(Spoon spoon) {
-        spoon.setTaken(true);
+        if (!spoon.isTaken()) {
+            spoon.setTaken(true);
+        }
     }
 
     public void putSpoon(Spoon spoon) {
-        if (spoon.equals(rightSpoon) && Math.random() > 0.5) {
-            spoon.setTaken(false);
-        } else {
+        if (spoon.isTaken() && Math.random() < 0.5) {
             spoon.setTaken(false);
         }
     }
 
     @Override
-    public synchronized void run() {
-        takeSpoon(leftSpoon);
-        rightSpoon.setTaken(true);
+    public void run() {
         while (true) {
-            if (rightSpoon.isTaken()) {
-                notify();
-                System.out.println(name + " is mealing now.");
-                putSpoon(rightSpoon);
-                takeSpoon(rightSpoon);
+            takeSpoon(rightSpoon);
+            takeSpoon(leftSpoon);
+            if (rightSpoon.isTaken() && leftSpoon.isTaken()) {
+                System.out.println(name + "'s eating");
             } else {
-                putSpoon(leftSpoon);
-                System.out.println(name + " has started thinking.");
-                try {
-                    wait();
-                } catch (InterruptedException e) {
-                }
+                System.out.println(name + "'s thinking");
             }
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            putSpoon(rightSpoon);
+            putSpoon(leftSpoon);
         }
     }
 }

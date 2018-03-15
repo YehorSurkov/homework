@@ -9,11 +9,11 @@ public class Spoon {
         taken = false;
     }
 
-    public boolean isTaken() {
+    public synchronized boolean isTaken() {
         return taken;
     }
 
-    public void setTaken(boolean taken) {
+    public synchronized void setTaken(boolean taken) {
         this.taken = taken;
     }
 

@@ -3,8 +3,6 @@ package lesson20;
 public class Dinner {
     public static void main(String[] args) {
         Spoon[] set = {new Spoon(), new Spoon(), new Spoon(), new Spoon(), new Spoon()};
-        set[0].setTaken(true);
-        set[1].setTaken(true);
 
         Philosopher ph1 = new Philosopher("Socrate", set[0], set[1]);
         Philosopher ph2 = new Philosopher("Platon", set[1], set[2]);
@@ -18,7 +16,7 @@ public class Dinner {
         Thread t4 = new Thread(ph4);
         Thread t5 = new Thread(ph5);
 
-
+        
         t1.start();
         t2.start();
         t3.start();
