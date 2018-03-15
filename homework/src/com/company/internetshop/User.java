@@ -2,12 +2,11 @@ package com.company.internetshop;
 
 
 import java.util.Objects;
-import java.util.List;
 
 public class User {
     private String login;
     private String password;
-    private List<Product> basket;
+    private Basket basket = null;
 
     public User(String name, String password) {
         this.login = name;
@@ -53,5 +52,18 @@ public class User {
                 '}';
     }
 
+    public void addToBasket(Product product) {
+        if (basket == null) {
+            basket = new Basket();
+        }
+        basket.putIn(product);
+    }
 
+    public double getCost() {
+        return basket.getTotalCost();
+    }
+
+    public void printReport(){
+
+    }
 }

@@ -9,11 +9,11 @@ public class Spoon {
         taken = false;
     }
 
-    public synchronized boolean isTaken() {
+    public boolean isTaken() {
         return taken;
     }
 
-    public synchronized void setTaken(boolean taken) {
+    public void setTaken(boolean taken) {
         this.taken = taken;
     }
 
@@ -27,7 +27,6 @@ public class Spoon {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(taken);
     }
 }

@@ -1,6 +1,5 @@
 package com.company.internetshop;
 
-import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -15,7 +14,7 @@ public class Shop {
     }
 
     public static User authentification(Map<String, String> users, String login, String password) {
-        if (users.containsKey(login) && users.containsValue(password)) {
+        if (users.containsKey(login) && users.get(login) == password) {
             return new User(login, password);
         } else {
             System.out.println("Access denied");

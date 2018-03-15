@@ -11,24 +11,29 @@ public class Philosopher extends Thread {
         this.rightSpoon = rightSpoon;
     }
 
-    public void takeSpoon(Spoon spoon) {
-        if (!spoon.isTaken()) {
-            spoon.setTaken(true);
+    public boolean takeSpoon(Spoon spoon) {
+        synchronized (spoon) {
+            if (!spoon.isTaken() && Math.random() < 0.5) {
+                spoon.setTaken(true);
+                return true;
+            }else {
+                return false;
+            }
         }
     }
 
     public void putSpoon(Spoon spoon) {
-        if (spoon.isTaken() && Math.random() < 0.5) {
-            spoon.setTaken(false);
+        synchronized (spoon) {
+            if (spoon.isTaken() && Math.random() < 0.5) {
+                spoon.setTaken(false);
+            }
         }
     }
 
     @Override
     public void run() {
         while (true) {
-            takeSpoon(rightSpoon);
-            takeSpoon(leftSpoon);
-            if (rightSpoon.isTaken() && leftSpoon.isTaken()) {
+            if (takeSpoon(rightSpoon) && takeSpoon(leftSpoon)) {
                 System.out.println(name + "'s eating");
             } else {
                 System.out.println(name + "'s thinking");

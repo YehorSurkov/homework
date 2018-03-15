@@ -1,5 +1,8 @@
 package com.company.internetshop;
 
+import com.company.internetshop.comparators.ComparatorCost;
+import com.company.internetshop.comparators.ComparatorName;
+import com.company.internetshop.comparators.ComparatorRank;
 import lesson16.collections.Product;
 
 import java.util.ArrayList;

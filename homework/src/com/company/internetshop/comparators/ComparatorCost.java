@@ -1,4 +1,4 @@
-package com.company.internetshop;
+package com.company.internetshop.comparators;
 
 import lesson16.collections.Product;
 
