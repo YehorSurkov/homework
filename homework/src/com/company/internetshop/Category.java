@@ -3,7 +3,6 @@ package com.company.internetshop;
 import com.company.internetshop.comparators.ComparatorCost;
 import com.company.internetshop.comparators.ComparatorName;
 import com.company.internetshop.comparators.ComparatorRank;
-import lesson16.collections.Product;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,7 +11,7 @@ import java.util.Objects;
 
 public class Category {
     private String name;
-    private List<lesson16.collections.Product> setOfProducts;
+    private List<Product> setOfProducts;
 
     public Category(String name, List<Product> setOfProducts) {
         this.name = name;

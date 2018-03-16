@@ -1,6 +1,6 @@
 package com.company.internetshop.comparators;
 
-import lesson16.collections.Product;
+import com.company.internetshop.Product;
 
 import java.util.Comparator;
 

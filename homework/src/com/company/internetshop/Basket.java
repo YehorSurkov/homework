@@ -1,18 +1,16 @@
 package com.company.internetshop;
 
 import java.io.*;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Basket implements Serializable {
-    private List<Product> basket;
+    private ArrayList<Product> basket;
 
-    public List<Product> getBasket() {
+    public ArrayList<Product> getBasket() {
         return basket;
     }
 
-    public void setBasket(List<Product> basket) {
+    public void setBasket(ArrayList<Product> basket) {
         this.basket = basket;
     }
 
@@ -50,7 +48,7 @@ public class Basket implements Serializable {
         return cost;
     }
 
-    //outputPass or inputPass = "src\\io\\serialized_basket.txt" just for testing
+    //outputPass or inputPass = "src\\io\\serialized_basket.txt"
     public boolean serializeBasket(String outputPass) {
         try (
                 OutputStream fos = new FileOutputStream(outputPass);
@@ -75,4 +73,5 @@ public class Basket implements Serializable {
         }
         return obj;
     }
+
 }

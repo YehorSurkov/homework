@@ -1,16 +1,25 @@
 package com.company.internetshop;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Objects;
 
 public class User {
     private String login;
     private String password;
-    private Basket basket = null;
+    private Basket basket;
 
     public User(String name, String password) {
         this.login = name;
         this.password = password;
+    }
+
+    public User(String name) {
+        this.login = name;
     }
 
     public String getLogin() {
@@ -27,6 +36,10 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Basket getBasket() {
+        return basket;
     }
 
     @Override
@@ -53,17 +66,25 @@ public class User {
     }
 
     public void addToBasket(Product product) {
-        if (basket == null) {
+        if(basket == null) {
             basket = new Basket();
         }
-        basket.putIn(product);
+            basket.putIn(product);
     }
 
     public double getCost() {
         return basket.getTotalCost();
     }
 
-    public void printReport(){
-
+    //path = "src\\io\\internetShopReport.txt"
+    public void printReport(String path) throws IOException {
+        if (basket != null) {
+            Writer writer = new FileWriter(path);
+            writer.write(new SimpleDateFormat("yyyy-MM-dd HH:MM:SS").format(Calendar.getInstance().getTime()) + '\n');
+            writer.write(login + '\n');
+            for (Product product : basket.getBasket()) {
+                writer.write(product.toString() + '\n');
+            }
+        }
     }
 }
