@@ -4,9 +4,13 @@ import java.io.*;
 import java.util.*;
 
 public class Basket implements Serializable {
-    private ArrayList<Product> basket;
+    private List<Product> basket;
 
-    public ArrayList<Product> getBasket() {
+    public Basket() {
+        this.basket = new ArrayList<>();
+    }
+
+    public List<Product> getBasket() {
         return basket;
     }
 
@@ -47,31 +51,4 @@ public class Basket implements Serializable {
         }
         return cost;
     }
-
-    //outputPass or inputPass = "src\\io\\serialized_basket.txt"
-    public boolean serializeBasket(String outputPass) {
-        try (
-                OutputStream fos = new FileOutputStream(outputPass);
-                ObjectOutputStream os = new ObjectOutputStream(fos);
-        ) {
-            os.writeObject(basket);
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    public static Object deserialize(String inputPath) {
-        Object obj = null;
-        try (FileInputStream fis = new FileInputStream(inputPath);
-             ObjectInputStream ois = new ObjectInputStream(fis)
-        ) {
-            obj = ois.readObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return obj;
-    }
-
 }

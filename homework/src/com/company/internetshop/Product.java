@@ -1,11 +1,12 @@
 package com.company.internetshop;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Product {
+public class Product implements Serializable {
     private String name;
     private double cost;
-    private  int rank;
+    private int rank;
 
     public Product(String name, double cost, int rank) {
         this.name = name;

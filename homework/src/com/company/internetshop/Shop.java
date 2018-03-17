@@ -40,6 +40,10 @@ public class Shop {
         user1.addToBasket(category.getSetOfProducts().get(3));
         System.out.println(user1.getCost());
         user1.printReport("src\\io\\internetShopReport.txt");
+        System.out.println("");
+        user1.serializeBasket("src\\\\io\\\\serialized_basket.txt");
+        System.out.println(user1.deserialize("src\\\\io\\\\serialized_basket.txt").toString());
+
     }
 
     public static User signIn(Map<String, String> users, String login, String password) {

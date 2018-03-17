@@ -1,9 +1,7 @@
 package com.company.internetshop;
 
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
@@ -16,10 +14,7 @@ public class User {
     public User(String name, String password) {
         this.login = name;
         this.password = password;
-    }
-
-    public User(String name) {
-        this.login = name;
+        this.basket = new Basket();
     }
 
     public String getLogin() {
@@ -66,10 +61,7 @@ public class User {
     }
 
     public void addToBasket(Product product) {
-        if(basket == null) {
-            basket = new Basket();
-        }
-            basket.putIn(product);
+        basket.putIn(product);
     }
 
     public double getCost() {
@@ -80,11 +72,40 @@ public class User {
     public void printReport(String path) throws IOException {
         if (basket != null) {
             Writer writer = new FileWriter(path);
-            writer.write(new SimpleDateFormat("yyyy-MM-dd HH:MM:SS").format(Calendar.getInstance().getTime()) + '\n');
-            writer.write(login + '\n');
+            writer.write(new SimpleDateFormat("yyyy-MM-dd HH:MM").format(Calendar.getInstance().getTime()));
+            writer.write(System.lineSeparator());
+            writer.write(login);
+            writer.write(System.lineSeparator());
             for (Product product : basket.getBasket()) {
-                writer.write(product.toString() + '\n');
+                writer.write(product.toString());
+                writer.write(System.lineSeparator());
             }
+            writer.close();
         }
+    }
+
+    //outputPass or inputPass = "src\\io\\serialized_basket.txt"
+    public boolean serializeBasket(String outputPass) {
+        try (
+                ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(outputPass));
+        ) {
+            os.writeObject(basket);
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Object deserialize(String inputPath) {
+        Object obj = null;
+        try (FileInputStream fis = new FileInputStream(inputPath);
+             ObjectInputStream ois = new ObjectInputStream(fis)
+        ) {
+            obj = ois.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return obj;
     }
 }
